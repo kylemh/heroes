@@ -12,8 +12,11 @@ function Header(props) {
   return (
     <header className={styles.Header}>
       {props.logo && <img src={props.logo} className={styles.logo} alt="logo" />}
-      <h1 className={styles.title}>{props.title}</h1>
-      {props.subtitle && <span className={styles.subtitle}>{props.subtitle}</span>}
+
+      <div className={styles.text}>
+        <h1 className={styles.title}>{props.title}</h1>
+        {props.subtitle && <span className={styles.subtitle}>{props.subtitle}</span>}
+      </div>
     </header>
   );
 };
