@@ -48,6 +48,11 @@ src
    └── registerServiceWorker.js
 ```
 
+9. [Get CSS Modules working with Sass](https://github.com/kylemh/heroes/commit/d1f29e654e67df1868d4cf0ea6478415afa43167)
+> What is CSS Modules?
+- https://github.com/css-modules/css-modules
+
+10. Create <Header> component :grin:
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
