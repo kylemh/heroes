@@ -13,6 +13,42 @@ A fun little project with all of your favorites duking it out.
 
 5. [Configure Webpack for Sass usage](https://github.com/kylemh/heroes/commit/cc872b88a9fcd1bcf67bdf39452d1794ab412285)
 
+6. Download and bring in the assets (images/audio files)
+
+7. [Configure Webpack for import aliases.](https://github.com/kylemh/heroes/commit/c77e9c741865e688bd1dcde09705e41210be723b)
+
+8. Finalize folder structure:
+```
+src
+|
+├── audio
+|  ├── chewie.mp3
+|  ├── darthbreath.mp3
+|  ├── leiasound.mp3
+|  ├── obisound.mp3
+|  └── tie.mp3
+├── components
+|  ├── Header
+|  ├── Button
+|  └── ...others...
+├── containers
+|  ├── App
+|  ├── ControlPanel
+|  └── ...others...
+├── images
+|  ├── chewie.jpg
+|  ├── darth.png
+|  ├── leia.jpg
+|  ├── logo.svg
+|  ├── obiwan.png
+|  ├── wallpaper.jpg
+|  └── wallpaper.png
+├── index.js
+└── utils
+   └── registerServiceWorker.js
+```
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
