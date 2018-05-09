@@ -1,0 +1,32 @@
+@import 'variables.scss';
+
+// Reads as "Below Screen XS band" - XS band is 375px to 575px
+@mixin below-screen-xs {
+  @media (max-width: #{$xs}) {
+    @content;
+  }
+}
+
+@mixin below-screen-sm {
+  @media (max-width: #{$sm}) {
+    @content;
+  }
+}
+
+@mixin below-screen-md {
+  @media (max-width: #{$md}) {
+    @content;
+  }
+}
+
+@mixin below-screen-lg {
+  @media (max-width: #{$lg}) {
+    @content;
+  }
+}
+
+@mixin below-screen-xl {
+  @media (max-width: #{$xl}) {
+    @content;
+  }
+}

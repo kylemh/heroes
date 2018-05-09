@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
+import Header from 'components/Header/Header';
 import logo from 'images/logo.svg';
-import './App.scss';
 
 class App extends Component {
   render() {
+    const styles = require('./App.scss');
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Heroes (ft. React)</h1>
-        </header>
-        <p className="App-intro">
+      <div className={styles.App}>
+        <Header
+          logo={logo}
+          title="Heroes (ft. React)"
+        />
+        <p className={styles.intro}>
           To get started, edit <code>src/App.js</code> and save to reload!
         </p>
       </div>
