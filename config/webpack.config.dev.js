@@ -94,7 +94,9 @@ module.exports = {
       'audio': path.resolve('src/audio/'),
       'components': path.resolve('src/components/'),
       'containers': path.resolve('src/containers/'),
-      'images': path.resolve('src/images/')
+      'images': path.resolve('src/images/'),
+      'variables': path.resolve('src/styles/variables.scss'),
+      'mixins': path.resolve('src/styles/mixins.scss')
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
