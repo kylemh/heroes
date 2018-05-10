@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from 'components/Header/Header';
+import Button from 'components/Button/Button';
 import logo from 'images/logo.svg';
 
 class App extends Component {
@@ -9,9 +10,11 @@ class App extends Component {
     return (
       <div className={styles.App}>
         <Header logo={logo} title="Heroes (ft. React)" />
-        <p className={styles.intro}>
-          To get started, edit <code>src/App.js</code> and save to reload!
-        </p>
+        <div className={styles.content}>
+          <Button>
+            Click me!
+          </Button>
+        </div>
       </div>
     );
   }
