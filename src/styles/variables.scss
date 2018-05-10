@@ -1,5 +1,43 @@
+// Media Query Borders
 $xs: 374px;
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
+
+// Theme (Bootstrap defaults cuz I'm lazy)
+$heroColor: #007bff;
+$villainColor: #dc3545;
+$neutralColor: #6c757d;
+$successColor: #28a745;
+$warningColor: #ffc107;
+$whiteColor: #eeeeee;
+$blackColor: #222222;
+
+$heroBtnBGColor: $heroColor;
+$heroBtnTextColor: $whiteColor;
+$heroBtnBorderColor: darken($heroBtnBGColor, 15%);
+
+$villainBtnBGColor: $villainColor;
+$villainBtnTextColor: $whiteColor;
+$villainBtnBorderColor: darken($villainBtnBGColor, 15%);
+
+$neutralBtnBGColor: $neutralColor;
+$neutralBtnTextColor: $whiteColor;
+$neutralBtnBorderColor: darken($neutralBtnBGColor, 15%);
+
+$successBtnBGColor: $successColor;
+$successBtnTextColor: $whiteColor;
+$successBtnBorderColor: darken($successBtnBGColor, 15%);
+
+$warningBtnBGColor: $warningColor;
+$warningBtnTextColor: $whiteColor;
+$warningBtnBorderColor: darken($warningBtnBGColor, 15%);
+
+$whiteBtnBGColor: $whiteColor;
+$whiteBtnTextColor: $blackColor;
+$whiteBtnBorderColor: darken($whiteBtnBGColor, 15%);
+
+$blackBtnBGColor: $blackColor;
+$blackBtnTextColor: $whiteColor;
+$blackBtnBorderColor: darken($blackBtnBGColor, 15%);
