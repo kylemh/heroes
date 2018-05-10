@@ -52,7 +52,13 @@ src
 > What is CSS Modules?
 - https://github.com/css-modules/css-modules
 
-10. Create <Header> component :grin:
+10. Create `<Header>` component :grin:
+
+11. Established theming
+
+12. Mapped important Sass files to aliases in Webpack for easy imports.
+
+13. Created `<Button>` component
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
