@@ -5,6 +5,11 @@ $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 
+// Container Dimensions
+$minHeaderHeight: 15vh;
+$minFooterHeight: 15vh;
+$minBodyHeight: 50vh;
+
 // Theme (Bootstrap defaults cuz I'm lazy)
 $heroColor: #007bff;
 $villainColor: #dc3545;
