@@ -10,6 +10,7 @@ const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
+const aliases = require('./aliases');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 
@@ -95,14 +96,7 @@ module.exports = {
       'react-native': 'react-native-web',
 
       // Custom Aliases
-      'api': path.resolve('src/api'),
-      'audio': path.resolve('src/audio'),
-      'components': path.resolve('src/components'),
-      'containers': path.resolve('src/containers'),
-      'images': path.resolve('src/images'),
-      'images': path.resolve('src/images/'),
-      'variables': path.resolve('src/styles/variables.scss'),
-      'mixins': path.resolve('src/styles/mixins.scss')
+      ...aliases
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).

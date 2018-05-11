@@ -11,6 +11,7 @@ const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeM
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
+const aliases = require('./aliases');
 const paths = require('./paths');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -91,13 +92,7 @@ module.exports = {
       'react-native': 'react-native-web',
 
       // Custom Aliases
-      'api': path.resolve('src/api'),
-      'audio': path.resolve('src/audio'),
-      'components': path.resolve('src/components'),
-      'containers': path.resolve('src/containers'),
-      'images': path.resolve('src/images'),
-      'variables': path.resolve('src/styles/variables.scss'),
-      'mixins': path.resolve('src/styles/mixins.scss')
+      ...aliases
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
