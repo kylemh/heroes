@@ -1,6 +1,12 @@
 @import '../../styles/global.scss';
 
 .App {
+  background-image: url('../../images/wallpaper.png');
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: $minBodyHeight;
+
   .content {
     margin: 1.5rem;
   }
