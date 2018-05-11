@@ -64,6 +64,10 @@ src
 
 15. Use background image for App body
 
+16. Bring on the data!
+
+17. Dynamically render the data!
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
