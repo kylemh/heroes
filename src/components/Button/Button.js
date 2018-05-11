@@ -39,20 +39,16 @@ function Button(props) {
 
   const getButtonColorClassName = () => {
     const { color } = props;
-    console.log('getButtonColorClassName', color);
     return color ? getClassNameByKey(color, 'BtnColor') : '';
   }
 
   const getButtonSizeClassName = () => {
     const { size } = props;
-    console.log('getButtonSizeClassName', size);
     return size ? getClassNameByKey(size, 'BtnSize') : '';
   }
 
   const getClassNameByKey = (keyString = '', postfix) => {
-    const styles = require('./Button.scss');
     const styleKey = keyString + postfix;
-    console.log('getClassNameByKey', styles[styleKey]);
     return styles[styleKey] || '';
   }
 
