@@ -60,6 +60,10 @@ src
 
 13. Created `<Button>` component
 
+14. Create `<Footer>` component
+
+15. Use background image for App body
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
