@@ -1,37 +1,65 @@
 import React, { Component } from 'react';
-import styles from './App.scss';
 import characterData from 'api/characterData';
-import Header from 'components/Header/Header';
 import logo from 'images/logo.svg';
+import styles from './App.scss';
+import Character from 'containers/Character/Character';
+import Header from 'components/Header/Header';
 
 class App extends Component {
   state = {
-    characters: [...characterData]
-  }
+    characters: [...characterData],
+    chosenPlayer: null,
+    chosenEnemy: null,
+  };
 
   playAudio = audio => {
     const characterAudio = new Audio(audio);
     characterAudio.play();
-  }
+  };
+
+  selectCharacter = character => {
+    console.log('Hi!', character);
+    const { state } = this;
+
+    if (state.chosenEnemy && state.chosenPlayer) {
+      return; // do nothing
+    }
+
+    if (this.state.chosenPlayer) {
+      this.selectEnemy(character);
+    } else {
+      this.selectPlayer(character);
+    }
+  };
+
+  selectEnemy = character => {
+    this.setState({ chosenEnemy: character }, this.playAudio(character.audio));
+  };
+
+  selectPlayer = character => {
+    this.setState({ chosenPlayer: character }, this.playAudio(character.audio));
+  };
 
   render() {
     return (
       <div className={styles.App}>
-        <Header logo={logo} title="Heroes (ft. React)" />
+        <Header
+          logo={logo}
+          title="Heroes (ft. React)"
+        />
         <div className={styles.content}>
-          {characterData.map(({ audio, hp, image, name }) => {
+          {characterData.map(character => {
             return (
-              <div
-                className={styles.characterCard}
-                key={name}
-                onClick={() => this.playAudio(audio)}
-              >
-                <h3>{name}</h3>
-                <img src={image} alt={`Portrait of ${name}`} />
-                <span>{hp}/{hp}&nbsp;</span>
-                <progress value={hp} max={hp} />
-              </div>
-            )
+              <Character
+                audio={character.audio}
+                hp={character.hp}
+                image={character.image}
+                key={character.name}
+                name={character.name}
+                onClick={() => this.selectCharacter(character)}
+                strength={character.strength}
+              />
+            );
           })}
         </div>
       </div>

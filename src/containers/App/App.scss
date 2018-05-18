@@ -16,16 +16,4 @@
     justify-content: space-around;
     margin: 1.5rem;
   }
-
-  .characterCard {
-    background-color: #483C2C;
-    border-radius: 4px;
-    border: 2px solid $blackColor;
-    margin: 1rem;
-    padding: 1rem;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
 }
