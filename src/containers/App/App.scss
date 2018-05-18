@@ -5,13 +5,14 @@
   background-image: url('images/wallpaper.png');
   background-position: right top;
   background-repeat: no-repeat;
-  background-size: auto $minBodyHeight;
+  background-size: cover;
   min-height: $minBodyHeight;
 
   .content {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+    height: 80vh;
     justify-content: space-around;
     margin: 1.5rem;
   }
