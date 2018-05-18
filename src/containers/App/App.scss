@@ -2,7 +2,7 @@
 @import 'variables';
 
 .App {
-  background-image: url('../../images/wallpaper.png');
+  background-image: url('images/wallpaper.png');
   background-position: right top;
   background-repeat: no-repeat;
   background-size: auto $minBodyHeight;
@@ -12,7 +12,6 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    height: 25vh;
     justify-content: space-around;
     margin: 1.5rem;
   }
