@@ -1,5 +1,6 @@
 {
-  "extends": "react-app",
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "plugins": ["react"],
   "rules": {
     "comma-dangle": [
       "error",
@@ -8,6 +9,16 @@
       }
     ],
     "function-paren-newline": ["error", "consistent"],
-    "react/jsx-max-props-per-line": [1, { "maximum": 2 }]
+    "react/jsx-closing-bracket-location": ["error", "line-aligned"],
+    "react/jsx-first-prop-new-line": ["error", "multiline"],
+    "react/jsx-indent-props": ["error", 2],
+    "react/jsx-max-props-per-line": ["error", { "maximum": 1 }]
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
   }
 }
