@@ -68,6 +68,9 @@ src
 
 17. Dynamically render the data!
 
+18. Use `node-sass-chokidar` instead of `node-sass` - [Discussion here.](https://github.com/facebook/create-react-app/pull/2114)
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
