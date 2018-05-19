@@ -11,7 +11,11 @@ Header.propTypes = {
 function Header(props) {
   return (
     <header className={styles.Header}>
-      {props.logo && <img src={props.logo} className={styles.logo} alt="logo" />}
+      {props.logo && <img
+        src={props.logo}
+        className={styles.logo}
+        alt="logo"
+      />}
 
       <div className={styles.text}>
         <h1 className={styles.title}>{props.title}</h1>
@@ -19,6 +23,6 @@ function Header(props) {
       </div>
     </header>
   );
-};
+}
 
 export default Header;

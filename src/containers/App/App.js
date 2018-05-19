@@ -13,12 +13,12 @@ class App extends Component {
   };
 
   playAudio = audio => {
+    // eslint-disable-next-line no-undef
     const characterAudio = new Audio(audio);
     characterAudio.play();
   };
 
   selectCharacter = character => {
-    console.log('Hi!', character);
     const { state } = this;
 
     if (state.chosenEnemy && state.chosenPlayer) {
