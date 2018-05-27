@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Card from 'components/Card/Card';
 import styles from './Character.scss';
 
@@ -18,12 +19,21 @@ class Character extends Component {
     isAlive: true,
   };
 
+  characterClickHandler = () => {
+    if (this.state.isAlive) {
+      this.props.onClick();
+    } else {
+      // eslint-disable-next-line no-undef
+      window.alert('This character is dead... Select another.');
+    }
+  };
+
   render() {
     const { props, state } = this;
 
     return (
       <Card
-        className={styles.Character}
+        className={classNames(styles.Character, { [styles.dead]: !state.isAlive })}
         headerContent={<h3 className={styles.header}>{props.name}</h3>}
         footerContent={
           <div className={styles.footer}>
@@ -37,7 +47,7 @@ class Character extends Component {
             </span>
           </div>
         }
-        onClick={props.onClick}
+        onClick={this.characterClickHandler}
       >
         <div className={styles.content}>
           <img

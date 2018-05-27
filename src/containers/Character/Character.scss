@@ -6,10 +6,19 @@
   border: 2px solid $blackColor;
   margin: 1rem;
   padding: 1rem;
-  width: 250px;
+  width: 200px;
 
   &:hover {
     cursor: pointer;
+  }
+
+  &.dead {
+    border-color: red;
+    opacity: 0.3;
+
+    &:hover {
+      cursor: not-allowed;
+    }
   }
 
   .header {
