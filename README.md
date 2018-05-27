@@ -70,8 +70,15 @@ src
 
 18. Use `node-sass-chokidar` instead of `node-sass` - [Discussion here.](https://github.com/facebook/create-react-app/pull/2114)
 
+19. Add custom lint configuration.
+
+20. Create Character selection view.
+
+21. [Fix bug in Character data.](https://github.com/kylemh/heroes/commit/608ed0a7743ea4464526c880b9e254cce61a12c3)
 
 
+
+## Create React App Boilerplate README
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
