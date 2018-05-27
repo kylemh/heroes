@@ -6,14 +6,12 @@
   background-position: right top;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: $minBodyHeight;
 
   .content {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    height: 80vh;
+    min-height: $bodyHeight;
     justify-content: space-around;
-    margin: 1.5rem;
   }
 }

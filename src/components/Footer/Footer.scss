@@ -1,0 +1,11 @@
+@import 'variables';
+
+.Footer {
+  align-items: center;
+  background-color: #222;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: $footerHeight;
+}

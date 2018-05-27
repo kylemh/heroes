@@ -1,8 +1,12 @@
 @import 'variables';
 
 @keyframes logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .Header {
@@ -12,8 +16,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  min-height: $minHeaderHeight;
-  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  height: $headerHeight;
 
   .logo {
     animation: logo-spin infinite 15s linear;

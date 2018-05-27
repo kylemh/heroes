@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import characterData from 'api/characterData';
 import logo from 'images/logo.svg';
 import styles from './App.scss';
-import Character from 'containers/Character/Character';
 import Header from 'components/Header/Header';
+import Footer from 'components/Footer/Footer';
+import Character from 'containers/Character/Character';
 
 class App extends Component {
   state = {
@@ -62,6 +63,7 @@ class App extends Component {
             );
           })}
         </div>
+        <Footer>Hello</Footer>
       </div>
     );
   }
