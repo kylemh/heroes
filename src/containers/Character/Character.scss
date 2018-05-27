@@ -21,6 +21,10 @@
     }
   }
 
+  &.selected {
+    outline: thick double #32a1ce;
+  }
+
   .header {
     text-align: center;
     text-decoration: underline;

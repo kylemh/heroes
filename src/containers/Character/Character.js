@@ -17,12 +17,20 @@ class Character extends Component {
   state = {
     currentHealth: this.props.hp,
     isAlive: true,
+    selected: false,
   };
 
   characterClickHandler = () => {
-    if (this.state.isAlive) {
-      this.props.onClick();
-    } else {
+    if (this.state.isAlive && !this.state.selected) {
+      this.setState({ selected: true }, this.props.onClick());
+    }
+
+    if (this.state.selected) {
+      // eslint-disable-next-line no-undef
+      window.alert('This character has already been selected.');
+    }
+
+    if (!this.state.isAlive) {
       // eslint-disable-next-line no-undef
       window.alert('This character is dead... Select another.');
     }
@@ -33,7 +41,10 @@ class Character extends Component {
 
     return (
       <Card
-        className={classNames(styles.Character, { [styles.dead]: !state.isAlive })}
+        className={classNames(styles.Character, {
+          [styles.dead]: !state.isAlive,
+          [styles.selected]: state.selected,
+        })}
         headerContent={<h3 className={styles.header}>{props.name}</h3>}
         footerContent={
           <div className={styles.footer}>

@@ -8,10 +8,6 @@
   background-size: cover;
 
   .content {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
     min-height: $bodyHeight;
-    justify-content: space-around;
   }
 }

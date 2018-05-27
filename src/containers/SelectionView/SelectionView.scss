@@ -1,0 +1,15 @@
+@import 'variables';
+
+.SelectionView {
+  .prompt {
+    color: $whiteColor;
+    text-align: center;
+  }
+
+  .options {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}

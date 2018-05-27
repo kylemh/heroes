@@ -1,46 +1,41 @@
 import React, { Component } from 'react';
-import characterData from 'api/characterData';
 import logo from 'images/logo.svg';
 import styles from './App.scss';
+import SelectionView from 'containers/SelectionView/SelectionView';
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
-import Character from 'containers/Character/Character';
 
 class App extends Component {
   state = {
-    characters: [...characterData],
     chosenPlayer: null,
     chosenEnemy: null,
+    lossCounter: 0,
+    winCounter: 0,
   };
 
-  playAudio = audio => {
-    // eslint-disable-next-line no-undef
-    const characterAudio = new Audio(audio);
-    characterAudio.play();
-  };
-
-  selectCharacter = character => {
+  currentView = () => {
     const { state } = this;
 
-    if (state.chosenEnemy && state.chosenPlayer) {
-      return; // do nothing
-    }
+    if (state.chosenPlayer && state.chosenEnemy) {
+      // TODO: Add tie if I care enough
 
-    if (this.state.chosenPlayer) {
-      this.selectEnemy(character);
+      if (state.chosenPlayer.health <= 0) {
+        this.setState({});
+        // return <LossView />;
+      }
+
+      if (state.chosenEnemy.health <= 0) {
+        //return <VictoryView />;
+      }
     } else {
-      this.selectPlayer(character);
+      return (
+        <SelectionView
+          onEnemySelect={character => this.setState({ chosenEnemy: character })}
+          onPlayerSelect={character => this.setState({ chosenPlayer: character })}
+        />
+      );
     }
   };
-
-  selectEnemy = character => {
-    this.setState({ chosenEnemy: character }, this.playAudio(character.audio));
-  };
-
-  selectPlayer = character => {
-    this.setState({ chosenPlayer: character }, this.playAudio(character.audio));
-  };
-
   render() {
     return (
       <div className={styles.App}>
@@ -48,21 +43,7 @@ class App extends Component {
           logo={logo}
           title="Heroes (ft. React)"
         />
-        <div className={styles.content}>
-          {characterData.map(character => {
-            return (
-              <Character
-                audio={character.audio}
-                hp={character.hp}
-                image={character.image}
-                key={character.name}
-                name={character.name}
-                onClick={() => this.selectCharacter(character)}
-                strength={character.strength}
-              />
-            );
-          })}
-        </div>
+        <div className={styles.content}>{this.currentView()}</div>
         <Footer>Hello</Footer>
       </div>
     );
