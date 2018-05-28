@@ -21,12 +21,6 @@ class SelectionView extends Component {
     this.setState({ characters: [...characterData] });
   }
 
-  playAudio = audio => {
-    // eslint-disable-next-line no-undef
-    const characterAudio = new Audio(audio);
-    characterAudio.play();
-  };
-
   selectCharacter = character => {
     if (this.state.chosenPlayer) {
       this.selectEnemy(character);
@@ -38,14 +32,12 @@ class SelectionView extends Component {
   selectEnemy = character => {
     this.setState({ chosenEnemy: character }, () => {
       this.props.onEnemySelect(character);
-      this.playAudio(character.audio);
     });
   };
 
   selectPlayer = character => {
     this.setState({ chosenPlayer: character }, () => {
       this.props.onPlayerSelect(character);
-      this.playAudio(character.audio);
     });
   };
 

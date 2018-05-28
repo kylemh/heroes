@@ -1,0 +1,16 @@
+@import 'variables';
+
+.CombatView {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .player {
+    outline: thick $heroColor;
+  }
+
+  .enemy {
+    outline: thick $villainColor;
+  }
+}
