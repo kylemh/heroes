@@ -88,7 +88,7 @@ class CombatView extends Component {
           <Character
             audio={props.player.audio}
             className={styles.player}
-            currentHealth={props.player.hp}
+            currentHealth={props.player.currentHealth}
             hp={props.player.hp}
             image={props.player.image}
             name={props.player.name}
@@ -97,7 +97,7 @@ class CombatView extends Component {
           <Character
             audio={props.enemy.audio}
             className={styles.enemy}
-            currentHealth={props.enemy.hp}
+            currentHealth={props.enemy.currentHealth}
             hp={props.enemy.hp}
             image={props.enemy.image}
             name={props.enemy.name}
