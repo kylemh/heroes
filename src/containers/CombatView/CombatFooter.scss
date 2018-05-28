@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 .CombatFooter {
   align-items: center;
@@ -11,5 +12,13 @@
     color: $whiteColor;
     padding: 1rem 0;
     outline: 2px $whiteColor;
+  }
+
+  @include below-screen-sm {
+    .message {
+      background-color: $whiteColor;
+      border-radius: 4px;
+      color: $blackColor;
+    }
   }
 }
