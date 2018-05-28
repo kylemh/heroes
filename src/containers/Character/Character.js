@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Card from 'components/Card/Card';
 import styles from './Character.scss';
+import Card from 'components/Card/Card';
 
 class Character extends Component {
   static propTypes = {
     audio: PropTypes.string.isRequired,
     className: PropTypes.string,
+    currentHealth: PropTypes.number.isRequired,
     hp: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -21,15 +22,13 @@ class Character extends Component {
   };
 
   state = {
-    currentHealth: this.props.hp,
-    isAlive: true,
     selected: false,
   };
 
   characterClickHandler = () => {
     const { props, state } = this;
 
-    if (state.isAlive && !state.selected) {
+    if (this.isAlive() && !state.selected) {
       this.setState({ selected: true }, () => {
         this.playAudio(props.audio);
         props.onClick();
@@ -41,7 +40,7 @@ class Character extends Component {
       window.alert('This character has already been selected.');
     }
 
-    if (!state.isAlive) {
+    if (!this.isAlive()) {
       // eslint-disable-next-line no-undef
       window.alert('This character is dead... Select another.');
     }
@@ -53,13 +52,17 @@ class Character extends Component {
     characterAudio.play();
   };
 
+  isAlive = () => {
+    return this.props.currentHealth > 0;
+  };
+
   render() {
     const { props, state } = this;
 
     return (
       <Card
         className={classNames(styles.Character, props.className, {
-          [styles.dead]: !state.isAlive,
+          [styles.dead]: !this.isAlive(),
           [styles.selected]: state.selected,
         })}
         headerContent={<h3 className={styles.header}>{props.name}</h3>}
@@ -67,11 +70,11 @@ class Character extends Component {
           <div className={styles.footer}>
             <progress
               className={styles.healthBar}
-              value={state.currentHealth}
+              value={props.currentHealth}
               max={props.hp}
             />
             <span className={styles.healthText}>
-              {state.currentHealth}/{props.hp}
+              {props.currentHealth}/{props.hp}
             </span>
           </div>
         }

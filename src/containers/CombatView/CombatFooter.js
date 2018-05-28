@@ -6,7 +6,7 @@ import Button from 'components/Button/Button';
 CombatFooter.propTypes = {
   className: PropTypes.string,
   isGameOver: PropTypes.bool,
-  message: PropTypes.string.isRequired,
+  message: PropTypes.node.isRequired,
   onAttack: PropTypes.func.isRequired,
 };
 
@@ -28,7 +28,7 @@ function CombatFooter(props) {
         Attack!
       </Button>
       {/* More Buttons/Functionality Could Go Here */}
-      <span className={styles.message}>{props.message}</span>
+      <div className={styles.message}>{props.message}</div>
     </div>
   );
 }

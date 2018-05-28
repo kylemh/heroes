@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from 'images/logo.svg';
+import tieFighterSoundFile from 'audio/tieFighter.mp3';
 import styles from './App.scss';
 import SelectionView from 'containers/SelectionView/SelectionView';
 import CombatView from 'containers/CombatView/CombatView';
@@ -19,27 +20,47 @@ class App extends Component {
     const { chosenEnemy, chosenPlayer } = this.state;
 
     if (chosenEnemy && chosenPlayer) {
-      if (chosenPlayer.health <= 0) {
-        this.setState({ currentGameView: 'loss' });
+      if (chosenPlayer.currentHealth <= 0) {
+        this.safeGameStateUpdate(prevState, 'loss');
         return;
       }
 
-      if (chosenEnemy.health <= 0) {
-        this.setState({ currentGameView: 'win' });
+      if (chosenEnemy.currentHealth <= 0) {
+        this.safeGameStateUpdate(prevState, 'win');
         return;
       }
 
-      if (prevState.currentGameView !== 'combat') {
-        // prevent infinite re-renders
-        this.setState({ currentGameView: 'combat' });
-      }
+      this.safeGameStateUpdate(prevState, 'combat');
     } else {
-      if (prevState.currentGameView !== 'selection') {
-        // prevent infinite re-renders
-        this.setState({ currentGameView: 'selection' });
-      }
+      this.safeGameStateUpdate(prevState, 'selection');
     }
   }
+
+  safeGameStateUpdate = (prevState, gameView) => {
+    // prevent infinite re-renders
+    if (prevState.currentGameView !== gameView) {
+      this.setState({ currentGameView: gameView });
+    }
+  };
+
+  attackHandler = (damageToPlayer = 1, damageToEnemy = 1) => {
+    const { chosenEnemy, chosenPlayer } = this.state;
+
+    const newPlayerHealth = chosenPlayer.currentHealth - damageToPlayer;
+    const newEnemyHealth = chosenEnemy.currentHealth - damageToEnemy;
+
+    this.setState({
+      chosenPlayer: { ...this.state.chosenPlayer, currentHealth: newPlayerHealth },
+      chosenEnemy: { ...this.state.chosenEnemy, currentHealth: newEnemyHealth },
+    });
+
+    // eslint-disable-next-line
+    console.log(chosenPlayer);
+
+    // eslint-disable-next-line no-undef
+    const tieFighterAudio = new Audio(tieFighterSoundFile);
+    tieFighterAudio.play();
+  };
 
   currentView = () => {
     const { state } = this;
@@ -53,10 +74,13 @@ class App extends Component {
           />
         );
       case 'combat':
-        return <CombatView
-          enemy={state.chosenEnemy}
-          player={state.chosenPlayer}
-        />;
+        return (
+          <CombatView
+            attackHandler={this.attackHandler}
+            enemy={state.chosenEnemy}
+            player={state.chosenPlayer}
+          />
+        );
       case 'win':
         return 'You win!';
       case 'loss':

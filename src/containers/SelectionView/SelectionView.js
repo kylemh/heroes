@@ -24,9 +24,9 @@ class SelectionView extends Component {
 
   selectCharacter = character => {
     if (this.state.chosenPlayer) {
-      this.selectEnemy(character);
+      this.selectEnemy({ ...character, currentHealth: character.hp });
     } else {
-      this.selectPlayer(character);
+      this.selectPlayer({ ...character, currentHealth: character.hp });
     }
   };
 
@@ -53,6 +53,7 @@ class SelectionView extends Component {
             return (
               <Character
                 audio={character.audio}
+                currentHealth={character.hp}
                 hp={character.hp}
                 image={character.image}
                 key={character.name}
