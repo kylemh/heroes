@@ -1,3 +1,4 @@
+@import 'mixins';
 @import 'variables';
 
 .Character {
@@ -7,6 +8,10 @@
   margin: 1rem;
   padding: 1rem;
   width: 200px;
+
+  @include below-screen-sm {
+    width: 125px;
+  }
 
   &:hover {
     cursor: pointer;
@@ -47,13 +52,12 @@
     .healthBar {
       appearance: none;
       -webkit-appearance: none;
-      flex-grow: 5;
       height: 1.5rem;
       margin: 0.5rem 0;
     }
 
     .healthText {
-      flex-grow: 1;
+      position: absolute;
       margin: 0 0.5rem;
     }
   }
