@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import characterData from 'api/characterData';
 import styles from './SelectionView.scss';
 import Character from 'containers/Character/Character';
+import ViewHeader from 'components/ViewHeader/ViewHeader';
 
 class SelectionView extends Component {
   static propTypes = {
@@ -44,9 +45,9 @@ class SelectionView extends Component {
   render() {
     return (
       <div className={styles.SelectionView}>
-        <h3 className={styles.prompt}>
-          {this.state.chosenPlayer ? 'Select The Enemy' : 'Select Your Character'}
-        </h3>
+        <ViewHeader>
+          {this.state.chosenPlayer ? 'Select A Character To Duel' : 'Select Your Character'}
+        </ViewHeader>
         <div className={styles.options}>
           {characterData.map(character => {
             return (
