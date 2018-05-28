@@ -31,7 +31,7 @@ class CombatView extends Component {
   };
 
   state = {
-    currentMessage: 'Use the force!',
+    currentMessage: '',
     isGameOver: false,
   };
 

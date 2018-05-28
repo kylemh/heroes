@@ -19,7 +19,7 @@ function CombatFooter(props) {
   return (
     <div className={`${styles.CombatFooter} ${props.className}`}>
       <Button
-        color="warning"
+        color="black"
         disabled={props.isGameOver}
         onClick={props.onAttack}
         size="large"
@@ -28,7 +28,7 @@ function CombatFooter(props) {
         Attack!
       </Button>
       {/* More Buttons/Functionality Could Go Here */}
-      <div className={styles.message}>{props.message}</div>
+      {props.message && <div className={styles.message}>{props.message}</div>}
     </div>
   );
 }

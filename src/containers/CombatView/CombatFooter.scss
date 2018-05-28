@@ -16,11 +16,11 @@
 
   @include below-screen-sm {
     .message {
-      background-color: $whiteColor;
+      background-color: $neutralColor;
       border-radius: 4px;
-      color: $blackColor;
+      color: $whiteColor;
       margin-top: 1rem;
-      padding: 1rem;
+      padding: 2rem;
     }
   }
 }
