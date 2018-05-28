@@ -70,9 +70,7 @@ module.exports = {
     publicPath: publicPath,
     // Point sourcemap entries to original disk location (format as URL on Windows)
     devtoolModuleFilenameTemplate: info =>
-      path
-        .relative(paths.appSrc, info.absoluteResourcePath)
-        .replace(/\\/g, '/'),
+      path.relative(paths.appSrc, info.absoluteResourcePath).replace(/\\/g, '/'),
   },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
@@ -96,7 +94,7 @@ module.exports = {
       'react-native': 'react-native-web',
 
       // Custom Aliases
-      ...aliases
+      ...aliases,
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -104,7 +102,7 @@ module.exports = {
       // To fix this, we prevent you from importing files out of src/ -- if you'd like to,
       // please link the files into your node_modules/ and let module-resolution kick in.
       // Make sure your source files are compiled, as they will not be processed in any way.
-      new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
+      new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson])
     ],
   },
   module: {
@@ -124,10 +122,9 @@ module.exports = {
             options: {
               formatter: eslintFormatter,
               eslintPath: require.resolve('eslint'),
-
             },
             loader: require.resolve('eslint-loader'),
-          },
+          }
         ],
         include: paths.appSrc,
       },
@@ -152,7 +149,6 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-
               compact: true,
             },
           },
@@ -177,12 +173,12 @@ module.exports = {
                   loader: require.resolve('css-loader'),
                   options: {
                     modules: true,
-                    localIdentName: '[name]__[local]__[hash:base64:5]'
+                    localIdentName: '[name]__[local]__[hash:base64:5]',
                   },
                 },
                 require.resolve('postcss-loader')
               ],
-            })
+            }),
           },
           // Sass Loader
           {
@@ -196,12 +192,12 @@ module.exports = {
                     modules: true,
                     sourceMap: true,
                     importLoaders: 2,
-                    localIdentName: '[name]__[local]__[hash:base64:5]'
+                    localIdentName: '[name]__[local]__[hash:base64:5]',
                   },
                 },
                 require.resolve('sass-loader')
               ],
-            })
+            }),
           },
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.
@@ -217,11 +213,11 @@ module.exports = {
             options: {
               name: 'static/media/[name].[hash:8].[ext]',
             },
-          },
+          }
           // ** STOP ** Are you adding a new loader?
           // Make sure to add the new loader(s) before the "file" loader.
         ],
-      },
+      }
     ],
   },
   plugins: [
@@ -322,7 +318,7 @@ module.exports = {
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
 
     // Custom Plugins
-    new ExtractTextPlugin({ filename: 'styles.css', allChunks: true
+    new ExtractTextPlugin({ filename: 'styles.css', allChunks: true })
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
