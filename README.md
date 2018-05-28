@@ -96,6 +96,8 @@ src
 
 31. Create end game view with ability to restart
 
+32. Make some mobile visibility fixes
+
 
 ## Create React App Boilerplate README
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
