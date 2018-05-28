@@ -33,7 +33,7 @@ src
 |  └── ...others...
 ├── containers
 |  ├── App
-|  ├── ControlPanel
+|  ├── CombatView
 |  └── ...others...
 ├── images
 |  ├── chewie.jpg
