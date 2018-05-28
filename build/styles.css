@@ -1,0 +1,240 @@
+html {
+  font-size: 16px; }
+  @media (max-width: 992px) {
+    html {
+      font-size: 15px; } }
+  @media (max-width: 576px) {
+    html {
+      font-size: 14px; } }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica; }
+
+.App__App__3USOb {
+  background-image: url(/heroes/static/media/wallpaper.c7c9c17c.png);
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .App__App__3USOb .App__content__1xM1A {
+    min-height: 70vh; }
+.SelectionView__SelectionView__hcIAK .SelectionView__options__3ZRZx {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+.Character__Character__3Wsmd {
+  background-color: #655136;
+  border-radius: 4px;
+  border: 2px solid #222222;
+  margin: 1rem;
+  padding: 1rem;
+  width: 200px; }
+  .Character__Character__3Wsmd:hover {
+    cursor: pointer; }
+  .Character__Character__3Wsmd.Character__dead__1yvnG {
+    border-color: red;
+    opacity: 0.3; }
+    .Character__Character__3Wsmd.Character__dead__1yvnG:hover {
+      cursor: not-allowed; }
+  .Character__Character__3Wsmd.Character__selected__pvTQn {
+    outline: thick double #32a1ce; }
+  .Character__Character__3Wsmd .Character__header__5S2Xg {
+    text-align: center;
+    text-decoration: underline; }
+  .Character__Character__3Wsmd .Character__content__1Ngdn .Character__image__YgMkT {
+    margin: 1rem 0;
+    width: 100%; }
+  .Character__Character__3Wsmd .Character__footer__3Sr_9 {
+    align-items: center;
+    display: flex; }
+    .Character__Character__3Wsmd .Character__footer__3Sr_9 .Character__healthBar__13Kmi {
+      appearance: none;
+      -webkit-appearance: none;
+      flex-grow: 5;
+      height: 1.5rem;
+      margin: 0.5rem 0; }
+    .Character__Character__3Wsmd .Character__footer__3Sr_9 .Character__healthText__2uvA3 {
+      flex-grow: 1;
+      margin: 0 0.5rem; }
+.Card__Card__os9oI {
+  min-height: 100px;
+  min-width: 100px; }
+.View__View__1Ta_n {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+.ViewHeader__ViewHeader__3uiu8 {
+  color: #eeeeee;
+  text-align: center; }
+.CombatView__CombatView__1x07K .CombatView__duelingCharacters__3C9Ko {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.CombatView__CombatView__1x07K .CombatView__player__2SVWs {
+  outline: thick #007bff; }
+.CombatFooter__CombatFooter__1RqEA {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 0; }
+  .CombatFooter__CombatFooter__1RqEA .CombatFooter__message__2dV1U {
+    color: #eeeeee;
+    padding: 1rem 0;
+    outline: 2px #eeeeee; }
+.Button__Button__2pL_i {
+  appearance: none !important;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 2px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  transition: background-color 0.2s linear, border-color 0.2s linear, box-shadow 0.2s linear, color 0.2s linear;
+  user-select: none; }
+  .Button__Button__2pL_i.Button__fullWidth__2Bi1P {
+    width: 100%; }
+  .Button__Button__2pL_i:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+    pointer-events: none; }
+
+.Button__heroBtnColor__ibVDv {
+  background-color: #007bff;
+  border-color: #0056b3;
+  color: #eeeeee; }
+  .Button__heroBtnColor__ibVDv:focus {
+    outline: 0; }
+  .Button__heroBtnColor__ibVDv:active:not(:disabled), .Button__heroBtnColor__ibVDv:hover:not(:disabled) {
+    background-color: #0056b3; }
+  .Button__heroBtnColor__ibVDv:focus:not(:disabled) {
+    box-shadow: 0 0 0 0.1rem #66b0ff; }
+
+.Button__villainBtnColor__iX8eE {
+  background-color: #dc3545;
+  border-color: #a71d2a;
+  color: #eeeeee; }
+  .Button__villainBtnColor__iX8eE:focus {
+    outline: 0; }
+  .Button__villainBtnColor__iX8eE:active:not(:disabled), .Button__villainBtnColor__iX8eE:hover:not(:disabled) {
+    background-color: #a71d2a; }
+  .Button__villainBtnColor__iX8eE:focus:not(:disabled) {
+    box-shadow: 0 0 0 0.1rem #eb8c95; }
+
+.Button__neutralBtnColor__3BHnL {
+  background-color: #6c757d;
+  border-color: #494f54;
+  color: #eeeeee; }
+  .Button__neutralBtnColor__3BHnL:focus {
+    outline: 0; }
+  .Button__neutralBtnColor__3BHnL:active:not(:disabled), .Button__neutralBtnColor__3BHnL:hover:not(:disabled) {
+    background-color: #494f54; }
+  .Button__neutralBtnColor__3BHnL:focus:not(:disabled) {
+    box-shadow: 0 0 0 0.1rem #a1a8ae; }
+
+.Button__successBtnColor__3HYnq {
+  background-color: #28a745;
+  border-color: #19692c;
+  color: #eeeeee; }
+  .Button__successBtnColor__3HYnq:focus {
+    outline: 0; }
+  .Button__successBtnColor__3HYnq:active:not(:disabled), .Button__successBtnColor__3HYnq:hover:not(:disabled) {
+    background-color: #19692c; }
+  .Button__successBtnColor__3HYnq:focus:not(:disabled) {
+    box-shadow: 0 0 0 0.1rem #5dd879; }
+
+.Button__warningBtnColor__2EQxI {
+  background-color: #ffc107;
+  border-color: #ba8b00;
+  color: #eeeeee; }
+  .Button__warningBtnColor__2EQxI:focus {
+    outline: 0; }
+  .Button__warningBtnColor__2EQxI:active:not(:disabled), .Button__warningBtnColor__2EQxI:hover:not(:disabled) {
+    background-color: #ba8b00; }
+  .Button__warningBtnColor__2EQxI:focus:not(:disabled) {
+    box-shadow: 0 0 0 0.1rem #ffdb6d; }
+
+.Button__whiteBtnColor__2mxrN {
+  background-color: #eeeeee;
+  border-color: #c8c8c8;
+  color: #222222; }
+  .Button__whiteBtnColor__2mxrN:focus {
+    outline: 0; }
+  .Button__whiteBtnColor__2mxrN:active:not(:disabled), .Button__whiteBtnColor__2mxrN:hover:not(:disabled) {
+    background-color: #c8c8c8; }
+  .Button__whiteBtnColor__2mxrN:focus:not(:disabled) {
+    box-shadow: 0 0 0 0.1rem white; }
+
+.Button__blackBtnColor__381M1 {
+  background-color: #222222;
+  border-color: black;
+  color: #eeeeee; }
+  .Button__blackBtnColor__381M1:focus {
+    outline: 0; }
+  .Button__blackBtnColor__381M1:active:not(:disabled), .Button__blackBtnColor__381M1:hover:not(:disabled) {
+    background-color: black; }
+  .Button__blackBtnColor__381M1:focus:not(:disabled) {
+    box-shadow: 0 0 0 0.1rem #555555; }
+.EndOfGameView__EndOfGameView__Mg749 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center; }
+  .EndOfGameView__EndOfGameView__Mg749.EndOfGameView__victory__12EA3 {
+    color: #007bff; }
+  .EndOfGameView__EndOfGameView__Mg749.EndOfGameView__loss__1dcc4 {
+    color: #dc3545; }
+  .EndOfGameView__EndOfGameView__Mg749.EndOfGameView__ratio__36HkE {
+    background-color: #eeeeee;
+    border: 1px solid #6c757d;
+    border-radius: 4px;
+    color: #222222; }
+  .EndOfGameView__EndOfGameView__Mg749 div {
+    padding: 1rem 0; }
+  .EndOfGameView__EndOfGameView__Mg749 button {
+    width: 200px; }
+@keyframes Header__logo-spin__C3INr {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.Header__Header__1_1R8 {
+  align-items: center;
+  background-color: #222;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 15vh; }
+  .Header__Header__1_1R8 .Header__logo__1AtfL {
+    animation: Header__logo-spin__C3INr infinite 15s linear;
+    height: 80px; }
+  .Header__Header__1_1R8 .Header__text__vF7QM {
+    display: flex;
+    flex-direction: column; }
+    .Header__Header__1_1R8 .Header__text__vF7QM .Header__title__YtTHq {
+      font-size: 2rem;
+      margin: 0 0 0.5rem 0; }
+    .Header__Header__1_1R8 .Header__text__vF7QM .Header__subtitle__gP4rA {
+      flex: 1 100%;
+      font-size: 1rem;
+      text-align: center; }
+.Footer__Footer__2erhF {
+  align-items: center;
+  background-color: #222;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 15vh; }
+
+/*# sourceMappingURL=styles.css.map*/
