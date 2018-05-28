@@ -31,6 +31,9 @@ body {
   margin: 1rem;
   padding: 1rem;
   width: 200px; }
+  @media (max-width: 576px) {
+    .Character__Character__3Wsmd {
+      width: 125px; } }
   .Character__Character__3Wsmd:hover {
     cursor: pointer; }
   .Character__Character__3Wsmd.Character__dead__1yvnG {
@@ -52,11 +55,10 @@ body {
     .Character__Character__3Wsmd .Character__footer__3Sr_9 .Character__healthBar__13Kmi {
       appearance: none;
       -webkit-appearance: none;
-      flex-grow: 5;
       height: 1.5rem;
       margin: 0.5rem 0; }
     .Character__Character__3Wsmd .Character__footer__3Sr_9 .Character__healthText__2uvA3 {
-      flex-grow: 1;
+      position: absolute;
       margin: 0 0.5rem; }
 .Card__Card__os9oI {
   min-height: 100px;
@@ -91,7 +93,9 @@ body {
     .CombatFooter__CombatFooter__1RqEA .CombatFooter__message__2dV1U {
       background-color: #eeeeee;
       border-radius: 4px;
-      color: #222222; } }
+      color: #222222;
+      margin-top: 1rem;
+      padding: 1rem; } }
 .Button__Button__2pL_i {
   appearance: none !important;
   border-radius: 4px;
@@ -242,4 +246,4 @@ body {
   justify-content: center;
   height: 15vh; }
 
-/*# sourceMappingURL=main.e45957ac.css.map*/
+/*# sourceMappingURL=main.548e31cf.css.map*/
