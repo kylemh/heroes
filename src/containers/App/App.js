@@ -68,9 +68,9 @@ class App extends Component {
     const { state } = this;
     switch (state.currentGameView) {
       case 'selection':
-        return <h4>{`Please select your character and the enemy's character.`}</h4>;
+        return <h4>Please select your character and the enemy&apos;s character.</h4>;
       case 'combat':
-        return <div>COMBAT</div>;
+        return <h4>Who will win?</h4>;
       case 'win':
         return <div>You Win!</div>;
       case 'loss':

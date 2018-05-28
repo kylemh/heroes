@@ -1,0 +1,15 @@
+@import 'variables';
+
+.CombatFooter {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 0;
+
+  .message {
+    color: $whiteColor;
+    padding: 1rem 0;
+    outline: 2px $whiteColor;
+  }
+}

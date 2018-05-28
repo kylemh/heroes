@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import styles from './Button.scss';
 
 Button.propTypes = {
-  children: PropTypes.any.isRequired,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
   color: PropTypes.oneOf(['hero', 'villain', 'neutral', 'success', 'warning', 'white', 'black']),
   disabled: PropTypes.bool,
@@ -27,7 +27,7 @@ Button.defaultProps = {
   style: {},
   tabIndex: 0,
   type: 'button',
-}
+};
 
 function Button(props) {
   const onButtonClickHandler = ev => {
@@ -40,21 +40,20 @@ function Button(props) {
   const getButtonColorClassName = () => {
     const { color } = props;
     return color ? getClassNameByKey(color, 'BtnColor') : '';
-  }
+  };
 
   const getButtonSizeClassName = () => {
     const { size } = props;
     return size ? getClassNameByKey(size, 'BtnSize') : '';
-  }
+  };
 
   const getClassNameByKey = (keyString = '', postfix) => {
     const styleKey = keyString + postfix;
     return styles[styleKey] || '';
-  }
+  };
 
   return (
     <button
-      children={props.children}
       className={classNames(
         styles.Button,
         getButtonColorClassName(),
@@ -71,6 +70,6 @@ function Button(props) {
       {props.loading ? '...' : props.children}
     </button>
   );
-};
+}
 
 export default Button;
