@@ -36,13 +36,6 @@ class App extends Component {
     }
   }
 
-  safeGameStateUpdate = (prevState, gameView) => {
-    // prevent infinite re-renders
-    if (prevState.currentGameView !== gameView) {
-      this.setState({ currentGameView: gameView });
-    }
-  };
-
   attackHandler = (damageToPlayer = 1, damageToEnemy = 1) => {
     const { chosenEnemy, chosenPlayer } = this.state;
 
@@ -96,9 +89,16 @@ class App extends Component {
       case 'combat':
         return <h4>Who will win?</h4>;
       case 'win':
-        return <div>You Win!</div>;
+        return <h4>You Win!</h4>;
       case 'loss':
-        return <div>You lose...</div>;
+        return <h4>You lose...</h4>;
+    }
+  };
+
+  safeGameStateUpdate = (prevState, gameView) => {
+    // prevent infinite re-renders
+    if (prevState.currentGameView !== gameView) {
+      this.setState({ currentGameView: gameView });
     }
   };
 
