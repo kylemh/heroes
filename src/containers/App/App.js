@@ -4,6 +4,7 @@ import tieFighterSoundFile from 'audio/tieFighter.mp3';
 import styles from './App.scss';
 import SelectionView from 'containers/SelectionView/SelectionView';
 import CombatView from 'containers/CombatView/CombatView';
+import EndOfGameView from 'containers/EndOfGameView/EndOfGameView';
 import Header from 'components/Header/Header';
 import Footer from 'components/Footer/Footer';
 
@@ -36,6 +37,18 @@ class App extends Component {
     }
   }
 
+  addLoss = () => {
+    this.setState(prevState => {
+      ++prevState.lossCounter;
+    });
+  };
+
+  addWin = () => {
+    this.setState(prevState => {
+      ++prevState.winCounter;
+    });
+  };
+
   attackHandler = (damageToPlayer = 1, damageToEnemy = 1) => {
     const { chosenEnemy, chosenPlayer } = this.state;
 
@@ -53,6 +66,13 @@ class App extends Component {
     // eslint-disable-next-line no-undef
     const tieFighterAudio = new Audio(tieFighterSoundFile);
     tieFighterAudio.play();
+  };
+
+  clearCharacters = () => {
+    this.setState({
+      chosenEnemy: null,
+      chosenPlayer: null,
+    });
   };
 
   currentView = () => {
@@ -75,9 +95,24 @@ class App extends Component {
           />
         );
       case 'win':
-        return 'You win!';
+        return (
+          <EndOfGameView
+            playerWon
+            winCounter={state.winCounter}
+            lossCounter={state.lossCounter}
+            restartGame={this.restartGame}
+            updateScore={this.addWin}
+          />
+        );
       case 'loss':
-        return 'You lose...';
+        return (
+          <EndOfGameView
+            winCounter={state.winCounter}
+            lossCounter={state.lossCounter}
+            restartGame={this.restartGame}
+            updateScore={this.addLoss}
+          />
+        );
     }
   };
 
@@ -89,10 +124,14 @@ class App extends Component {
       case 'combat':
         return <h4>Who will win?</h4>;
       case 'win':
-        return <h4>You Win!</h4>;
+        return <h4>You win!</h4>;
       case 'loss':
         return <h4>You lose...</h4>;
     }
+  };
+
+  restartGame = () => {
+    this.clearCharacters();
   };
 
   safeGameStateUpdate = (prevState, gameView) => {

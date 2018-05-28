@@ -1,0 +1,32 @@
+@import 'variables';
+
+.EndOfGameView {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  &.victory {
+    color: $heroColor;
+  }
+
+  &.loss {
+    color: $villainColor;
+  }
+
+  &.ratio {
+    background-color: $whiteColor;
+    border: 1px solid $neutralColor;
+    border-radius: 4px;
+    color: $blackColor;
+  }
+
+  div {
+    padding: 1rem 0;
+  }
+
+  button {
+    width: 200px;
+  }
+}
