@@ -87,6 +87,11 @@ body {
     color: #eeeeee;
     padding: 1rem 0;
     outline: 2px #eeeeee; }
+  @media (max-width: 576px) {
+    .CombatFooter__CombatFooter__1RqEA .CombatFooter__message__2dV1U {
+      background-color: #eeeeee;
+      border-radius: 4px;
+      color: #222222; } }
 .Button__Button__2pL_i {
   appearance: none !important;
   border-radius: 4px;
@@ -237,4 +242,4 @@ body {
   justify-content: center;
   height: 15vh; }
 
-/*# sourceMappingURL=main.5baaba2a.css.map*/
+/*# sourceMappingURL=main.e45957ac.css.map*/
