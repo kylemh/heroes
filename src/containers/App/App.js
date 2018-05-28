@@ -60,9 +60,6 @@ class App extends Component {
       chosenEnemy: { ...this.state.chosenEnemy, currentHealth: newEnemyHealth },
     });
 
-    // eslint-disable-next-line
-    console.log(chosenPlayer);
-
     // eslint-disable-next-line no-undef
     const tieFighterAudio = new Audio(tieFighterSoundFile);
     tieFighterAudio.play();
