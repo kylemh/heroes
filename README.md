@@ -76,6 +76,25 @@ src
 
 21. [Fix bug in Character data.](https://github.com/kylemh/heroes/commit/608ed0a7743ea4464526c880b9e254cce61a12c3)
 
+22. Add styling for dead and selected characters. (unused)
+
+23. Create and implement footer component for a nicely framed app
+
+24. Implement view and control system for application
+
+25. Move audio function to Character container
+
+26. Create Combat View
+
+27. Create reusable view and viewheader components for views
+
+28. Generate Combat View footer content
+
+29. Implement combat system
+
+30. A few fixes (rename tie fighter audio file, fix typo in Footer, and make health bar dynamic)
+
+31. Create end game view with ability to restart
 
 
 ## Create React App Boilerplate README
